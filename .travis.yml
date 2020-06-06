@@ -1,0 +1,19 @@
+language: java
+sudo: false
+
+jdk:
+  -oraclejdk11
+
+install:
+  mvn clean install -Dskiptests=true
+
+script:
+  mvn -Dtest=SUTTest test -e
+  
+deploy:
+  provider: pages
+  github_token: $GITHUB_TOKEN
+  skip_cleanup: true
+  keep_history: true
+  on:
+    branch: master
