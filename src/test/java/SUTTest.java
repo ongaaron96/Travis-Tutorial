@@ -38,12 +38,4 @@ public class SUTTest {
         SUT sut = new SUT();
         sut.stringConcatenation(s1,  s2);
     }
-    
-    @Test
-    public void testStringConcatenation_length40_throwsIllegalArgumentException2() {
-    	String s1 = "aaaaabbbbbcccccddddd";
-        String s2 = "eeeeefffffggggghhhhh";
-        SUT sut = new SUT();
-        assertThrows(IllegalArgumentException.class, () -> sut.stringConcatenation(s1,  s2));
-    }
 }
